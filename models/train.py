@@ -93,14 +93,8 @@ def build_model():
     ('tfidf', TfidfTransformer()),
     ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
-
-     # Declaring parameters
-    parameters = {'clf__estimator__min_samples_leaf': [2, 3, 4]}
-
     
-    cv = GridSearchCV(pipeline, parameters)
-    
-    return cv   
+    return pipeline   
 
 
 
